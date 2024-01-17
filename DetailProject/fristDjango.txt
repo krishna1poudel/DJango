@@ -1,0 +1,45 @@
+ Tutorial Overview
+1.installing & Enviroment setup(for intstalling django we use=> pip install django  
+       to check version we use => python -m django --version
+        for creating a django project=> django-admin startproject (your project name)
+        to run python project use => python manage.py runserver  )
+
+        # their is request is done by user  so 1st url.py is in used 
+           then their path is call by first importing 
+           ( this is for the static rendering for simple project complex for debugging for big project)
+          1.1) from django.http import HttpResponse #( here we import HttpResponse from django.http)
+          2.2) create function as =>def index(request):
+                                        return HttpResponse(" its me krishna) // this is the out i.e Its me krishna
+
+                            urlpattern=[
+                                 path('admin/', admin.site.urls), ( this is intially present  )
+                                   path('',index) // this say this is the first http://127.0.0.1:8000/
+                            ]
+
+         # for the big project we create the app layer to modify /manage things  and deal with also databases and render through templete
+           1.1) for creating app we use => python manage.py startapp (your app name)
+                and then go to the views.py  to create the another http request by using :
+                                         def employee(request):   or( your app name)
+                                        return HttpResponse(" its me employee ")
+
+            2.2) after go to main empsys or main projectname file and then go to Url.py wher http request handle
+                       and ther set the urlpattern just by importing  function name employee with http HttpResponse
+                           i.e =>   from Employee.views import Employee  here this say that Employee is a floder name which i 
+                                    already make and then views is the python file where  Http request response is writeeen
+
+                                    finally here also set the urlpattern path=>
+                            urlpattern=[
+                                 path('admin/', admin.site.urls), ( this is intially present  )
+                                 path('',index), // this say this is the first http://127.0.0.1:8000/
+                                 path('employee', employee)  //here def employee is called  and return the its me employee 
+                                                             // in a http://127.0.0.1:8000/employee
+                            ]
+                                   
+
+2.Handaling HTTP request/views/Urls
+3.Models And Databases
+4.Templates
+5.Views/class Based views /Mixins
+6.Working with forms
+7.Authentication
+8.One project(movie Recomondation System)
