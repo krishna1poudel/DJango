@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
-from Employee.views import employee
-def index(request):
-    return HttpResponse("hello i am krishna")
+from Employee.views import employee,index
+from Employee.views import employeer
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('employee',employee)
+    path('employee',employee),
+    path('employeer',employeer)
 ]

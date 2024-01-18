@@ -1,5 +1,18 @@
  Tutorial Overview
-1.installing & Enviroment setup(for intstalling django we use=> pip install django  
+1.installing & Enviroment setup
+
+2.Handaling HTTP request/views/Urls
+3.Models And Databases
+4.Templates
+5.Views/class Based views /Mixins
+6.Working with forms
+7.Authentication
+8.One project(movie Recomondation System)
+
+
+
+     1)days 
+     (for intstalling django we use=> pip install django  
        to check version we use => python -m django --version
         for creating a django project=> django-admin startproject (your project name)
         to run python project use => python manage.py runserver  )
@@ -36,10 +49,50 @@
                             ]
                                    
 
-2.Handaling HTTP request/views/Urls
-3.Models And Databases
-4.Templates
-5.Views/class Based views /Mixins
-6.Working with forms
-7.Authentication
-8.One project(movie Recomondation System)
+     2)days(templete concepts ). tempelete directory set in setting.py
+                      but by default  App vitra template hunxa tyo detail setting.py ma hunxa
+                      Here  App is Employee . Templete i.e visible to the user
+
+                      so, here i create a Templete folder inside the Employee (i.e App)
+                         if i create  file eg. index.html insder that Templete folder  
+                         so, setting.py vitra ko Dir ma manage hunxa 
+                          templete haru handle Garna => render function use hunxa
+                           
+
+                           and render function take different argument i.e(request,template_name, other are optional)
+
+                           so , i create a index.html inside templete folder then , i.e html file  we all know
+                           that templete folder is inside the Employee folder so inside Employee  in a view.py 
+                           then, we create this\
+                                              => def index(request):
+                                               return render(request,'index.html') after that
+
+                            we that we go empsys to the url.py and import by doing this
+                                                  =>from Employee.views import employee,index
+                                                 we already set the path urlpattern before so need
+                                                 to change
+                             and for proper run  we go to  empsys setting.py  =>
+                                                                       INSTALLED_APPS=['index.html',]
+                              then finally run.
+                         
+                          if we create app inside tempate no need to set path  but 
+                          outside the app  we create tempate then we this the directory in settings.py as     eg inside Templete in 'DIRS': [BASE_DIR,'Templete'],
+                            
+                            then if we use templete inherent or 
+                             navigate fix then we use 
+                                          {% block main %}
+                                         <div class="container"> 
+                                             <h1>this is the home page</h1></div>
+                                             {% endblock %} this is on main page.
+
+                         inside the other  we us    we write this like 
+                                                           
+                                                           {% extends "base.html" %} {% block main %}
+                                                              <div class="container">
+                                                                 <h1> this is employee page</h1>
+                                                              </div>
+                                                             {% endblock %}
+
+                    
+     
+            
