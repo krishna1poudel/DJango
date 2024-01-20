@@ -93,6 +93,49 @@
                                                               </div>
                                                              {% endblock %}
 
-                    
-     
-            
+          3 days) {% %}  ues for the conditon write, for loop, templete inheritance
+                   and the double curly backet  {{}}  used for data ,variable lie templete vitra render to use
+
+                   In this views to data lie templete ma kasari caputure and templete ko data lie kasari view ma capture garney.
+                     {{}} take the data from views to templates i.e=> by
+                                                   def employeer(request):
+                                                   context ={
+                                                       'name':"krishna poudel",
+                                                       'address':"sanepa,Lalitpur",
+                                                   }
+                                                   return render(request,'employeer.html',context)
+                                       here context is passed during return and accept in employeer.html using {{name}}
+                                         and {{address}}
+
+                 request(consist of metainformation , post and get data) => generally use  of get, post,  other  request
+                     !! in this 3 class, we create a form and access that form  data .
+
+                     in this we create the form and get the data. by 
+                                           <form action="", method="POST"> //here method is post
+                                                         {% csrf_token %} //this is to hand the post 
+                                                         <div class="form-group">
+                                                           <label for="exampleInputEmail1">Email address</label>
+                                                           <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                         </div>
+                                                         <div class="form-group">
+                                                           <label for="exampleInputPassword1">Password</label>
+                                                           <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                                                         </div>
+                                                         <div class="form-check">
+                                                           <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checked">
+                                                           <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                                         </div>
+                                                         <button type="submit" class="btn btn-primary">Submit</button>
+                                                       </form>
+                                                    </div>  
+
+                                                    => name="" is used to get data  
+
+                                                    in  views.py   we use =>data=request.METHOD to get data                                                 
+                                              eg)=>  def employee(request):
+                                                         data=request.POST
+                                                         print(data['email'])
+                                                         return render(request, 'Employee.html')
+                                       
+                                       action="" , which hyperlink or which url we have to go

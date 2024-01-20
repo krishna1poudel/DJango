@@ -11,8 +11,13 @@ def index(request):
 
 
 def employee(request):
+    data=request.POST
+    print(data)
     return render(request, 'Employee.html')
 
 def employeer(request):
- 
-    return render(request,'employeer.html')
+         context ={
+             'name':"krishna poudel",
+             'address':"sanepa,Lalitpur",
+         }
+         return render(request,'employeer.html',context)
